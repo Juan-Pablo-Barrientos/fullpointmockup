@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-primary bg-primary nav-shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand text-center logo" href="#">FULL POINT</a>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/brands'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Representaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/aboutUs'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Sobre Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/findUs'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Donde estamos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [href]="'https://drive.google.com/file/d/19UQcqgK7MYqGHmi_b-Ooeu4dPEkx7CU2/view'"  target="_blank">Catalogo</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

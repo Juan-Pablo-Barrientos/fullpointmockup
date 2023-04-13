@@ -1,0 +1,29 @@
+
+@font-face {
+  font-family: 'rubik';
+  src: url('/fullpointmockup/src/assets/font/Rubik-BlackItalic.ttf');
+}
+
+.image-container {
+  width:100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+  position: relative;
+  display: inline-block; /* allow the container to wrap around the image */
+
+}
+.img{
+  width: 100%;
+}
+
+.caption {
+  position: absolute;
+  top: 50%; /* position the top of the caption at the middle of the container */
+  left: 50%; /* position the left side of the caption at the middle of the container */
+  transform: translate(-50%, -50%); /* move the caption up and left by half its size */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Open Sans;
+}
