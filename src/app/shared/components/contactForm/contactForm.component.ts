@@ -1,0 +1,86 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
+import axios from 'axios';
+import { ToastrService } from 'ngx-toastr';
+
+@Component({
+  selector: 'app-contactForm',
+  templateUrl: './contactForm.component.html',
+  styleUrls: ['./contactForm.component.scss']
+})
+export class ContactFormComponent implements OnInit {
+  sendContactForm:any;
+  preSetValue:any;
+  preSetValue2:any;
+  errors: any[]=[];
+
+  constructor(private toastr: ToastrService){}
+
+  @ViewChild('myInput') myInput: ElementRef | undefined;
+  @ViewChild('myInput2') myInput2: ElementRef | undefined;
+
+  ngAfterViewInit() {
+    this.preSetValue = this.myInput?.nativeElement.value;
+    console.log(this.preSetValue);
+    this.preSetValue2 = this.myInput2?.nativeElement.value;
+    console.log(this.preSetValue2);
+  }
+
+  ngOnInit(): void {
+    this.sendContactForm=new FormGroup({
+      nameControl: new FormControl('',[Validators.required]),
+      lastNameControl: new FormControl('',[Validators.required]),
+      phoneControl: new FormControl(''),
+      emailControl: new FormControl('',[Validators.required]),
+      subjectControl: new FormControl('',[Validators.required]),
+      cityControl: new FormControl(''),
+      provinceControl: new FormControl(''),
+      messageControl: new FormControl('',[Validators.required]),
+    });
+  }
+
+  sendEmail() {
+    const MAILGUN_DOMAIN = 'sandbox84d85928f2de4bcfa88d62023437858c.mailgun.org';
+    const formData = new FormData();
+    formData.append('from', 'fullpoint@info.com');
+    formData.append('to', 'jpbarrientosros@gmail.com');
+    formData.append('subject', this.sendContactForm.controls.subjectControl);
+    formData.append('text', 'Hola mi nombre es '+this.sendContactForm.controls.nameControl.value+' '+this.sendContactForm.controls.lastNameControl.value+
+    ' mi telefono es '+this.sendContactForm.controls.phoneControl.value+
+    ' te dejo mi email para contactarte conmigo '+this.sendContactForm.controls.emailControl.value);
+    this.getFormValidationErrors()
+    if (this.errors.length!==0){
+      this.toastr.error('Falta completar campos requeridos', 'Error al enviar')
+      this.sendContactForm.markAllAsTouched();
+      return
+    }
+    this.toastr.success('Gracias por postularte!', 'CV Enviado');
+    /*axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
+      auth: {
+        username: 'api',
+        password: this.preSetValue+this.preSetValue2
+      },
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(response => {
+    })
+    .catch(error => {
+      console.error('Error sending email:', error);
+    });*/
+  }
+
+  getFormValidationErrors() {
+    this.errors=[]
+    Object.keys(this.sendContactForm.controls).forEach(key => {
+      const controlErrors: ValidationErrors = this.sendContactForm.get(key).errors;
+      if(controlErrors != null) {
+          Object.keys(controlErrors).forEach(keyError => {
+          this.errors.push(keyError);
+        });}
+      }
+    );
+  }
+
+}
