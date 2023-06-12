@@ -12,3 +12,51 @@ img{
   width: 100%;
   height: 150px;
 }
+
+.blur-effect {
+  position: relative;
+}
+
+.blur-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:url("https://www.thespruce.com/thmb/IIT_ZMdxU_y5rGqxCkXEgyc4TQM=/5120x3413/filters:fill(auto,1)/place-settings-on-elegant-dining-table-457980249-5834b3395f9b58d5b13487d5.jpg") repeat fixed;
+  background-size: 100% auto;
+  filter: blur(7px) brightness(1.2);
+  z-index: 0;
+}
+
+.blur-effect::after {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-color: blue;
+  opacity: 0.75; /* Adjust the opacity to your preference */
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.caption h2 {
+  font-size: 5vw;
+}
+
+.scrollingBackground {
+  z-index: -1;
+  background:url("https://www.thespruce.com/thmb/IIT_ZMdxU_y5rGqxCkXEgyc4TQM=/5120x3413/filters:fill(auto,1)/place-settings-on-elegant-dining-table-457980249-5834b3395f9b58d5b13487d5.jpg") repeat fixed;
+  background-size: 100% auto;
+}

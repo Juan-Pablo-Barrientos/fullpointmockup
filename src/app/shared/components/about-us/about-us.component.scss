@@ -12,3 +12,61 @@ img {
 img:hover {
   transform: scale(1.1);
 }
+
+
+.scrollingBackground {
+  z-index: -1;
+  background:url(http://www.psdgraphics.com/wp-content/uploads/2014/02/colorful-triangles.jpg) repeat fixed;
+  background-size: 100% auto;
+}
+.imageContainer{
+  height: 100%;
+  width: 10em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img{
+  width: 100%;
+}
+.blur-effect {
+  position: relative;
+}
+
+.blur-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:url(http://www.psdgraphics.com/wp-content/uploads/2014/02/colorful-triangles.jpg) repeat fixed;
+  background-size: 100% auto;
+  filter: blur(5px) brightness(1.2);
+  z-index: 0;
+}
+
+.blur-effect::after {
+  content: "";
+  position: absolute;
+  top: -0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0.7; /* Adjust the opacity to your preference */
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.caption h2 {
+  font-size: 5vw;
+}
