@@ -1,45 +1,18 @@
 
 .scrollingBackground {
-  z-index: -1;
-  background:url(https://www.wirtschaftsimpulse.net/fileadmin/_processed_/b/4/csm_Grundlagen_der_Lagerlogistik_c2388be93e.jpg) repeat fixed;
-  background-size: 100% auto;
+  background:url('https://www.build-review.com/wp-content/uploads/2021/03/Warehouse.jpg') no-repeat fixed;
+  background-size: cover;
 }
 .imageContainer{
   height: 100%;
-  width: 10em;
+  width: 100%;
+  max-width: 10rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 img{
   width: 100%;
-}
-.blur-effect {
-  position: relative;
-}
-
-.blur-effect::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:url(https://www.wirtschaftsimpulse.net/fileadmin/_processed_/b/4/csm_Grundlagen_der_Lagerlogistik_c2388be93e.jpg) repeat fixed;
-  background-size: 100% auto;
-  filter: blur(5px) brightness(1.2);
-  z-index: 0;
-}
-
-.blur-effect::after {
-  content: "";
-  position: absolute;
-  top: -3%;
-  left: 0;
-  width: 100%;
-  height: 106%;
-  background-color: blue;
-  opacity: 0.7; /* Adjust the opacity to your preference */
 }
 
 .caption {
@@ -52,9 +25,6 @@ img{
   z-index: 1;
 }
 
-.caption h2 {
-  font-size: 5vw;
-}
 
 input[type='file'] {
   color:transparent;
@@ -67,7 +37,7 @@ input[type='file'] {
 .custom-file-input::before {
   content: 'Cargar CV';
   display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  background: blue;
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
@@ -84,4 +54,38 @@ input[type='file'] {
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.bg-image{
+  background:url('../../../../assets/yellowBackground.jpg') repeat;
+  background-size: 100% auto;
+}
+.banner {
+  background-image: url('http://img01.yun300.cn/img/04hz.jpg?tenantId=152370&viewType=1&k=1606975393000');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  text-align: center;
+  color: yellow /* Cambia el color del texto según sea necesario */
+}
+
+.banner h1 {
+  font-size: 72px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 18px;
+}
+.blurredBackground{
+  backdrop-filter: blur(3px) brightness(0.85) saturate(1.5) hue-rotate(190deg);
+}
+
+@media only screen and (min-width:800px){
+  .cvCard{
+    width:50%;
+  }
+}
+.bg-image{
+  padding: 20px;
 }

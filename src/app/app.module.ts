@@ -15,6 +15,7 @@ import { ContactFormComponent } from './shared/components/contactForm/contactFor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule
   ],
   providers: [
     provideAnimations()],

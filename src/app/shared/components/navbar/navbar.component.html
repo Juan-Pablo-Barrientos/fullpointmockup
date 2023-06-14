@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-lg navbar-primary bg-white nav-shadow fixed-top " [ngClass]="{'navbar-small': isNavbarSmall}">
   <div class="container" >
     <a href="/">
-      <div class="brandContainer"[ngClass]="{'image-small': isNavbarSmall}">
-        <img src="../../../../assets/brandTitle.jpeg" style="width:100%">
+      <div class="brandContainer"[ngClass]="{'image-small': isNavbarSmall}" >
+        <img [@slideInAnimation] src="../../../../assets/brandTitle.jpeg" style="width:100%">
       </div>
     </a>
     <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
