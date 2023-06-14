@@ -21,9 +21,7 @@ export class ContactFormComponent implements OnInit {
 
   ngAfterViewInit() {
     this.preSetValue = this.myInput?.nativeElement.value;
-    console.log(this.preSetValue);
     this.preSetValue2 = this.myInput2?.nativeElement.value;
-    console.log(this.preSetValue2);
   }
 
   ngOnInit(): void {
@@ -44,17 +42,27 @@ export class ContactFormComponent implements OnInit {
     const formData = new FormData();
     formData.append('from', 'fullpoint@info.com');
     formData.append('to', 'jpbarrientosros@gmail.com');
-    formData.append('subject', this.sendContactForm.controls.subjectControl);
-    formData.append('text', 'Hola mi nombre es '+this.sendContactForm.controls.nameControl.value+' '+this.sendContactForm.controls.lastNameControl.value+
-    ' mi telefono es '+this.sendContactForm.controls.phoneControl.value+
-    ' te dejo mi email para contactarte conmigo '+this.sendContactForm.controls.emailControl.value);
+    formData.append('subject', this.sendContactForm.controls.subjectControl.value);
+    formData.append('text', 'Hola mi nombre es '+this.sendContactForm.controls.nameControl.value+' '+this.sendContactForm.controls.lastNameControl.value)
+    if (this.sendContactForm.controls.phoneControl.value){
+      formData.append('text', 'Telefono: '+this.sendContactForm.controls.phoneControl.value)
+    };
+    if (this.sendContactForm.controls.cityControl.value){
+      formData.append('text', 'Vivo en: '+this.sendContactForm.controls.cityControl.value)
+    };
+    if (this.sendContactForm.controls.cityControl.value){
+      formData.append('text', this.sendContactForm.controls.provinceControl.value)
+    };
+    formData.append('text', 'Email: '+this.sendContactForm.controls.emailControl.value)
+    formData.append('text', 'Consulta: '+this.sendContactForm.controls.messageControl.value)
+
     this.getFormValidationErrors()
     if (this.errors.length!==0){
       this.toastr.error('Falta completar campos requeridos', 'Error al enviar')
       this.sendContactForm.markAllAsTouched();
       return
     }
-    this.toastr.success('Gracias por postularte!', 'CV Enviado');
+    this.toastr.success('Gracias por contactarte!', 'Hemos recibido tu mensaje');
     /*axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
         username: 'api',

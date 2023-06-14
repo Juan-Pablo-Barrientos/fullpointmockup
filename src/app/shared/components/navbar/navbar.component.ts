@@ -1,10 +1,19 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { faBullhorn, faCloudSun, faPencil } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  animations: [
+    trigger('slideInAnimation', [
+      transition(':enter', [
+        style({ transform: 'translateX(-250%)' }),
+        animate('0.8s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class NavbarComponent implements OnInit {
   faPencil=faPencil

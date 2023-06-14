@@ -1,29 +1,35 @@
-<div class="scrollingBackground v100">
-  <div class="blur-effect" style="height: 20vh; width:100%">
-    <div class="caption">
-      <h2>Trabaja con nosotros</h2>
-    </div>
-  </div>
-  <div class="justify-content-center d-flex">
-    <div class="d-flex w-50 m-5">
-      <form class="container-fluid" (ngSubmit)="sendEmail()" [formGroup]="sendCvForm">
-        <div class="row text-center bg-warning p-5 rounded-3">
-          <h2 class="ms-2">Carga de datos</h2>
+<div class="scrollingBackground v100 ">
+  <div class="justify-content-center d-flex v100 blurredBackground">
+    <div class="d-flex cvCard m-5 align-self-center " >
+      <form class="container-fluid " (ngSubmit)="sendEmail()" [formGroup]="sendCvForm">
+        <div class="row text-white justify-content-center text-center">
+          <h2 class="h2">VENI A CONOCERNOS Y A FORMAR PARTE DE UN GRAN EQUIPO</h2>
+          <p>En Fullpoint, consideramos la lealtad a nuestro papel como uno de nuestros valores fundamentales.
+            Nos enorgullece ser un distribuidor mayorista completamente comprometido con el comercio minorista.</p>
+        </div>
+        <div class="row text-center bg-image rounded-3 " style="margin-top:2em">
           <div class="col">
             <div class="imageContainer">
               <img src="https://www.parodisrl.com.ar/img/file.png">
-              <div class="custom-file">
+              <div class="custom-file mt-2">
                 <input type="file" class="custom-file-input" id="customFile" (change)="updateFileName($event.target)">
                 <label class="custom-file-label" for="customFile">{{ fileName }}</label>
               </div>
             </div>
           </div>
-          <div class="col">
-                <input type="text" class="form-control m-2 form-control-sm" formControlName="nameControl" id="nameControl" name="nameControl" placeholder="Tu nombre">
-                <input type="lastName" class="form-control m-2 form-control-sm" formControlName="lastNameControl" id="lastNameControl" name="lastNameControl" placeholder="Tu apellido">
-                <input type="phone" class="form-control m-2 form-control-sm" formControlName="phoneControl" id="phoneControl" name="phoneControl" placeholder="Tu telefono">
-                <input type="number" class="form-control m-2 form-control-sm" formControlName="ageControl" id="ageControl" name="ageControl" placeholder="Tu edad">
-                <input type="email" class="form-control m-2 form-control-sm" formControlName="emailControl" id="emailControl" name="emailControl" placeholder="Tu email">
+          <div class="col-sm justify-content-center">
+                <input type="text" class="form-control m-2 form-control-sm" formControlName="nameControl" id="nameControl" name="nameControl" placeholder="Tu nombre*">
+                <input type="lastName" class="form-control m-2 form-control-sm" formControlName="lastNameControl" id="lastNameControl" name="lastNameControl" placeholder="Tu apellido*">
+                <input type="phone" class="form-control m-2 form-control-sm" formControlName="phoneControl" id="phoneControl" name="phoneControl" placeholder="Tu telefono*">
+                <input type="number" class="form-control m-2 form-control-sm" formControlName="ageControl" id="ageControl" name="ageControl" placeholder="Tu edad*">
+                <input type="email" class="form-control m-2 form-control-sm" formControlName="emailControl" id="emailControl" name="emailControl" placeholder="Tu email*">
+                <select class="form-select m-2 form-select-sm" formControlName="sectionControl" id="sectionControl" name="sectionControl" placeholder="Tu email*">
+                  <option value=""> - Vacante - </option>
+                  <option value="ventas">Ventas</option>
+                  <option value="logistica">Logistica</option>
+                  <option value="deposito">Deposito </option>
+                  <option value="administracion">Administracion</option>
+                </select>
                 <input hidden class="form-control m-2 form-control-sm" id="thisthing1" #myInput name="thisthing1" value="c86f3d2b2dcb5d1ec0476fe">
                 <input hidden class="form-control m-2 form-control-sm" id="thisthing2" #myInput2 name="thisthing2" value="6feb79835-6d1c649a-4e051612">
           </div>

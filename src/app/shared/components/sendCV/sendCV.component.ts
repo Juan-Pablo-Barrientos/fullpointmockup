@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SendCVComponent implements OnInit {
   selectedFile: File | null = null;
-  fileName: string = 'Choose file';
+  fileName: string = 'Seleccione archivo';
   sendCvForm:any;
   preSetValue:any;
   preSetValue2:any;
@@ -24,9 +24,7 @@ export class SendCVComponent implements OnInit {
 
   ngAfterViewInit() {
     this.preSetValue = this.myInput?.nativeElement.value;
-    console.log(this.preSetValue);
     this.preSetValue2 = this.myInput2?.nativeElement.value;
-    console.log(this.preSetValue2);
   }
 
   ngOnInit(): void {
@@ -35,7 +33,8 @@ export class SendCVComponent implements OnInit {
       lastNameControl: new FormControl('',[Validators.required]),
       phoneControl: new FormControl('',[Validators.required]),
       ageControl: new FormControl('',[Validators.required]),
-      emailControl: new FormControl('',[Validators.required])
+      emailControl: new FormControl('',[Validators.required]),
+      sectionControl: new FormControl('',[Validators.required])
     });
   }
 
@@ -60,6 +59,7 @@ export class SendCVComponent implements OnInit {
     formData.append('subject', 'Juan Barrientos CV');
     formData.append('text', 'Hola mi nombre es '+this.sendCvForm.controls.nameControl.value+' '+this.sendCvForm.controls.lastNameControl.value+
     ' mi telefono es '+this.sendCvForm.controls.phoneControl.value+' y tengo '+this.sendCvForm.controls.ageControl.value+' años'+
+    ' estoy aplicando para la seccion de '+this.sendCvForm.controls.sectionControl.value+
     ' te dejo mi email para contactarte conmigo '+this.sendCvForm.controls.emailControl.value);
     formData.append('attachment', this.selectedFile as Blob);
     this.getFormValidationErrors()
