@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-primary bg-white nav-shadow fixed-top " [ngClass]="{'navbar-small': isNavbarSmall}">
   <div class="container" >
     <a href="/">
-      <div class="brandContainer"[ngClass]="{'image-small': isNavbarSmall}" >
+      <div class="brandContainer p-3 mt-1"[ngClass]="{'image-small': isNavbarSmall}" >
         <img [@slideInAnimation] src="../../../../assets/brandTitle.jpeg" style="width:100%">
       </div>
     </a>
@@ -40,3 +40,6 @@
     </div>
   </div>
 </nav>
+<div class="wspButton" [ngClass]="{'wspButton-translateButton': isNavbarSmall}">
+  <a href="https://wa.me/+5493413510506"  target="_blank"><img src="https://cdn.discordapp.com/attachments/618970725252071424/1120109041981587636/4485687.png"></a>
+</div>

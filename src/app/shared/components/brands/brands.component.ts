@@ -1,12 +1,26 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { NgbCarousel, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-brands',
   templateUrl: './brands.component.html',
-  styleUrls: ['./brands.component.scss']
+  styleUrls: ['./brands.component.scss'],
 })
 export class BrandsComponent {
+  slideIn = false;
+
+  constructor() { }
+
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const yOffset = window.scrollY;
+    // Adjust the condition based on when you want the slide effect to occur
+    if (yOffset > 200) {
+      this.slideIn = true;
+    }
+  }
+
   brands:{image:string, name:string}[]=[
     {
       image:'../../../../assets/prittyLogo.jpg',
@@ -150,18 +164,4 @@ export class BrandsComponent {
       image:'https://www.pritty.com.ar/img/productos/logos/parcial_sodasaldan.png',
       name:'Saldan'},
   ]
-  slideIn = false;
-
-  constructor() { }
-
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const yOffset = window.scrollY;
-    // Adjust the condition based on when you want the slide effect to occur
-    if (yOffset > 200) {
-      this.slideIn = true;
-    }
-  }
-
 }

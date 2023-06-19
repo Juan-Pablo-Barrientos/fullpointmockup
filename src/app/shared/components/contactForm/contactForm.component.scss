@@ -42,7 +42,8 @@
 
 .scrollingBackground {
   z-index: -1;
-  background:url(../../../../assets/office_desk.jpg) repeat;
+  background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('../../../../assets/office_desk.jpg');
+  background-repeat: repeat;
   background-size: 100% auto;
 }
 

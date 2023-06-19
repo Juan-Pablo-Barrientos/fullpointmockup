@@ -1,11 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@font-face {
-  font-family: 'Bitter';
-  src: url('/src/assets/font/static/Bitter-Medium.ttf') format('truetype');
-}
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '~ngx-toastr/toastr.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 html, body {
   box-sizing: border-box;
   height: 100%;
@@ -32,6 +28,20 @@ html, body {
   }
 }
 
+.toast-container .ngx-toastr{
+  position:fixed;
+  right:1em;
+  top:3em;
+  z-index: 1;
+  height: 100px;
+}
+#toast-container > .toast-error{
+  position:fixed;
+  right:1em;
+  top:3em;
+  z-index: 0;
+}
+
 input.ng-invalid.ng-dirty,
 input.ng-invalid.ng-touched,
 select.ng-invalid.ng-dirty,
@@ -45,6 +55,9 @@ textarea.ng-invalid.ng-touched {
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
