@@ -2,7 +2,7 @@
   <div class="container-fluid" style="overflow: hidden;">
     <div class="text-center "><h2 class="display-1 mt-5">REPRESENTACIONES</h2></div>
     <div class="">
-      <ngb-carousel *ngIf="brands">
+      <ngb-carousel *ngIf="brands" >
         <ng-template ngbSlide>
           <div class="card-deck d-flex row">
             <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 16)" style="width: 11.2rem;">

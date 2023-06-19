@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isNavbarSmall = (window.scrollY > 0);
+    this.isNavbarSmall = (window.scrollY < 0);
   }
 
   toggleNavbar() {

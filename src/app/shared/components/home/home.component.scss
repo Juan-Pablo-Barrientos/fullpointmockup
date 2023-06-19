@@ -6,8 +6,13 @@
 
 .backgroundImage{
   filter: brightness(1.2) contrast(1.2);
-  background:url(https://www.ruggedmobilityforbusiness.com/wp-content/uploads/2019/11/Interior_of_a_modern_warehouse_2500w.jpg) no-repeat;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://www.ruggedmobilityforbusiness.com/wp-content/uploads/2019/11/Interior_of_a_modern_warehouse_2500w.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
+}
+
+img {
+  filter: brightness(1) contrast(1);
 }
 
 .caption {
@@ -20,4 +25,124 @@
   padding: 10px;
   font-size: 18px;
   font-family: Open Sans;
+}
+
+.h1{
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+  font-size: 3em;
+}
+.h2{
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.5em;
+}
+
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.circle:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.captions {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: block;
+}
+
+.captions span {
+  display: block;
+  font-size: 1.5em;
+  text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.underCircleCaption span {
+  display: block;
+  font-size: 1.2em;
+  text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.top-caption {
+  top: 20px;
+}
+
+.bottom-caption {
+  bottom: 40%;
+}
+
+.circle:hover .top-caption,
+.circle:hover .bottom-caption {
+  opacity: 1;
+}
+
+.circle .top-caption{
+  opacity: 1;
+
+}
+
+.filterImage{
+  filter: drop-shadow(8px 8px 4px black)  drop-shadow(0px 0px 0.04rem white);
+}
+
+@media only screen and (min-width: 1150px){
+  .h1{
+    font-size:4em
+  }
+
+  .h2{
+    font-size:2em
+  }
+  .circle{
+    width: 350px!important;
+    height: 350px!important;
+  }
+  .circle .captions span{
+    font-size: 2em!important;
+  }
+}
+@media only screen and (min-width: 680px){
+  .cards{
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .justify-content-end{
+    justify-content: center!important;
+  }
+  .border-4{
+    border: 0px!important;
+  }
+  .h1{
+    text-align: center;
+  }
+  .h2{
+    text-align: center;
+  }
 }

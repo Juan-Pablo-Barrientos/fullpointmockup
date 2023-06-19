@@ -1,6 +1,8 @@
 
 .scrollingBackground {
-  background:url('https://www.build-review.com/wp-content/uploads/2021/03/Warehouse.jpg') no-repeat fixed;
+  background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url('https://www.build-review.com/wp-content/uploads/2021/03/Warehouse.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
   background-size: cover;
 }
 .imageContainer{
@@ -88,4 +90,11 @@ input[type='file'] {
 }
 .bg-image{
   padding: 20px;
+}
+
+h2{
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+p{
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }

@@ -25,6 +25,26 @@ img {
   image-rendering: auto;
 }
 
+.wspButton{
+  position: fixed;
+  bottom:30px;
+  right: 20px;
+  z-index:10;
+  width: 5em;
+  transition: top 0.3s ease;
+}
+
+
+.wspButton img{
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  filter:drop-shadow(0 0 8px black)
+}
+
+.wspButton img:hover{
+  transform: scale(1.2);
+}
+
 @media only screen and (min-width: 990px){
   .navbar-small {
     height: 30px!important;
@@ -48,6 +68,7 @@ img {
     height: 35px!important;
     transition: height 0.3s ease;
   }
+
 }
 @media only screen and (max-width: 990px){
   .brandContainer{
