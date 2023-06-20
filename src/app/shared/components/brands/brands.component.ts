@@ -54,19 +54,19 @@ export class BrandsComponent {
       name:'Vino Toro'},
     {
     image:'../../../../assets/estanciaMendoza.jpg',
-    name:'Estancia Mendoza'},
+    name:'Mendoza'},
     {
     image:'../../../../assets/norton.jpg',
-    name:'Estancia Norton'},
+    name:'Norton'},
     {
     image:'../../../../assets/cafayateEtchart.jpeg',
-    name:'Bodegas Etchart'},
+    name:'Etchart'},
     {
     image:'../../../../assets/bodegaLaRural.jpg',
-    name:'Bodega La Rural'},
+    name:'La Rural'},
     {
     image:'../../../../assets/federicoDeAlvear.png',
-    name:'Federico De Alvear'},
+    name:'De Alvear'},
     {
     image:'../../../../assets/campari.png',
     name:'Campari'},
