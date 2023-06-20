@@ -2,10 +2,10 @@
   <div class="container-fluid" style="overflow: hidden;">
     <div class="text-center "><h2 class="display-1 mt-5">REPRESENTACIONES</h2></div>
     <div class="">
-      <ngb-carousel *ngIf="brands" >
+      <ngb-carousel *ngIf="brands" class="desktop" >
         <ng-template ngbSlide>
           <div class="card-deck d-flex row">
-            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 16)" style="width: 11.2rem;">
+            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 16)">
               <div class="image-container">
                 <img [src]="brand.image" class="card-img-top" alt="Image">
               </div>
@@ -17,7 +17,7 @@
         </ng-template>
         <ng-template ngbSlide>
           <div class="card-deck d-flex row">
-            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(16, 32)" style="width: 11.2rem;">
+            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(16, 32)">
               <div class="image-container">
                 <img [src]="brand.image" class="card-img-top" alt="Image">
               </div>
@@ -29,7 +29,7 @@
         </ng-template>
         <ng-template ngbSlide>
           <div class="card-deck d-flex row">
-            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(32, 50)" style="width: 11.2rem;">
+            <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(32, 50)">
               <div class="image-container">
                 <img [src]="brand.image" class="card-img-top" alt="Image">
               </div>
@@ -41,6 +41,83 @@
         </ng-template>
       </ngb-carousel>
     </div>
+
+    <ngb-carousel *ngIf="brands" class="mobile">
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 8)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(8, 16)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(16, 24)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(24, 32)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(32, 40)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="card-deck d-flex row">
+          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(40, 50)">
+            <div class="image-container">
+              <img [src]="brand.image" class="card-img-top" alt="Image">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{brand.name}}</h5>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+
 
     <div class="d-flex mt-5" style="width: 150rem;">
       <div class="fit-picture col"  [class.slide-from-side]="slideIn">
