@@ -31,9 +31,9 @@ export class SendCVComponent implements OnInit {
     this.sendCvForm=new FormGroup({
       nameControl: new FormControl('',[Validators.required]),
       lastNameControl: new FormControl('',[Validators.required]),
-      phoneControl: new FormControl('',[Validators.required]),
-      ageControl: new FormControl('',[Validators.required]),
-      emailControl: new FormControl('',[Validators.required]),
+      phoneControl: new FormControl('',[Validators.required, Validators.pattern('^[0-9]+$')]),
+      ageControl: new FormControl('',[Validators.required, Validators.pattern('^[0-9]+$')]),
+      emailControl: new FormControl('',[Validators.required, Validators.email]),
       sectionControl: new FormControl('',[Validators.required])
     });
   }
@@ -69,7 +69,7 @@ export class SendCVComponent implements OnInit {
       return
     }
     this.toastr.success('Gracias por postularte!', 'CV Enviado');
-    /*axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
+    axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
         username: 'api',
         password: this.preSetValue+this.preSetValue2
@@ -82,7 +82,7 @@ export class SendCVComponent implements OnInit {
     })
     .catch(error => {
       console.error('Error sending email:', error);
-    });*/
+    });
   }
 
   getFormValidationErrors() {
