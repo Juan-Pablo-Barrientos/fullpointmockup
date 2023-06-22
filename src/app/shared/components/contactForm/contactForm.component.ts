@@ -28,8 +28,8 @@ export class ContactFormComponent implements OnInit {
     this.sendContactForm=new FormGroup({
       nameControl: new FormControl('',[Validators.required]),
       lastNameControl: new FormControl('',[Validators.required]),
-      phoneControl: new FormControl(''),
-      emailControl: new FormControl('',[Validators.required]),
+      phoneControl: new FormControl('',[Validators.pattern('^[0-9]+$')]),
+      emailControl: new FormControl('',[Validators.required, Validators.email]),
       subjectControl: new FormControl('',[Validators.required]),
       cityControl: new FormControl(''),
       provinceControl: new FormControl(''),
