@@ -119,11 +119,11 @@ img {
 
 .banner img {
   width: 100%;
-  height: auto;
-  height: 250px; /* The height will adjust automatically based on the image proportions */
+  height: 300px; /* The height will adjust automatically based on the image proportions */
   max-width: 100%; /* Ensure the image doesn't exceed its original size */
   display: block; /* Make sure the image is a block element */
   object-fit: cover;
+  object-position: bottom right;
 }
 .banner .overlay {
   position: absolute;
