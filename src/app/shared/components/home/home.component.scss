@@ -6,7 +6,7 @@
 
 .backgroundImage{
   filter: brightness(1.2) contrast(1.2);
-  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://www.ruggedmobilityforbusiness.com/wp-content/uploads/2019/11/Interior_of_a_modern_warehouse_2500w.jpg');
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../../../../assets/vista-deposito-1.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -108,7 +108,7 @@ img {
 }
 
 .filterImage{
-  filter: drop-shadow(8px 8px 4px black) ;
+  filter: contrast(50%) drop-shadow(8px 8px 4px black);
 }
 
 @media only screen and (min-width: 1150px){

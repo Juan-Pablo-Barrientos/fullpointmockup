@@ -21,147 +21,42 @@ export class BrandsComponent {
     }
   }
 
-  brands:{image:string, name:string}[]=[
+  brands:{image:string}[]=[
     {
-      image:'../../../../assets/prittyLogo.jpg',
-      name:'Pritty'},
+      image:'../../../../assets/logos/Pritty.jpg'
+    },
     {
-      image:'https://www.fernet.com.uy/wp-content/uploads/2011/08/fernet-branca-logo.jpg',
-      name:'Fernet Branca'},
+      image:'../../../../assets/logos/baggio.png'
+    },
     {
-      image:'https://d245euu0fln19d.cloudfront.net/headers/1111760956.tmp',
-      name:'Doble Cola'},
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
     {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_livra.png',
-      name:'Livra'},
+      image:'../../../../assets/bodegaLaRural.jpg'
+    },
     {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_magna.png',
-      name:'Magna'},
+      image:'../../../../assets/logos/campari_logo_0_1_0.png'
+    },
     {
-      image:'../../../../assets/villaSanRemo.png',
-      name:'Villa San Remo'},
+      image:'../../../../assets/logos/Energizer-logo.png'
+    },
     {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_sodasaldan.png',
-      name:'Saldan'},
+      image:'../../../../assets/logos/fecovita.png'
+    },
     {
-      image:'../../../../assets/baggio.png',
-      name:'Baggio'},
+      image:'../../../../assets/logos/marolio.png'
+    },
     {
-      image:'../../../../assets/speed.png',
-      name:'Speed'},
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
     {
-      image:'../../../../assets/toro.jpg',
-      name:'Vino Toro'},
+      image:'../../../../assets/logos/pascual-toso.jpeg'
+    },
     {
-    image:'../../../../assets/estanciaMendoza.jpg',
-    name:'Mendoza'},
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
     {
-    image:'../../../../assets/norton.jpg',
-    name:'Norton'},
-    {
-    image:'../../../../assets/cafayateEtchart.jpeg',
-    name:'Etchart'},
-    {
-    image:'../../../../assets/bodegaLaRural.jpg',
-    name:'La Rural'},
-    {
-    image:'../../../../assets/federicoDeAlvear.png',
-    name:'De Alvear'},
-    {
-    image:'../../../../assets/campari.png',
-    name:'Campari'},
-    {
-    image:'../../../../assets/absolut.png',
-    name:'Absolut.'},
-    {
-    image:'../../../../assets/sernova.jpeg',
-    name:'Sernova Vodka'},
-    {
-    image:'../../../../assets/skyyVodka.png',
-    name:'Skyy Vodka'},
-    {
-    image:'../../../../assets/cachacaPitu.jpg',
-    name:'Cachaca Pitu'},
-    {
-    image:'../../../../assets/larios.png',
-    name:'Larios'},
-    {
-    image:'../../../../assets/beefeater.jpg',
-    name:'Beefeater'},
-    {
-    image:'../../../../assets/orloff.png',
-    name:'Orloff'},
-    {
-    image:'../../../../assets/brighton.jpg',
-    name:'Brighton'},
-    {
-    image:'../../../../assets/malibu.png',
-    name:'Malibu Coco'},
-    {
-    image:'../../../../assets/havanaClub.png',
-    name:'Havana Club'},
-    {
-    image:'../../../../assets/hiramWalker.png',
-    name:'Hiram Walker'},
-    {
-    image:'../../../../assets/buheroNegro.png',
-    name:'Buhero Negro'},
-    {
-    image:'../../../../assets/tiaMaria.jpg',
-    name:'Tia Maria'},
-    {
-    image:'../../../../assets/jimBeam.png',
-    name:'Jim Beam'},
-    {
-    image:'../../../../assets/pipers.jpg',
-    name:'100 Pipers'},
-    {
-    image:'../../../../assets/jameson.png',
-    name:'Jameson'},
-    {
-    image:'../../../../assets/grants.png',
-    name:'Grants'},
-    {
-    image:'../../../../assets/dobleV.png',
-    name:'Doble V'},
-    {
-    image:'../../../../assets/blenders.png',
-    name:'Blenders'},
-    {
-    image:'../../../../assets/chivas.jpg',
-    name:'Chivas'},
-    {
-    image:'../../../../assets/cusenier.jpeg',
-    name:'Cusenier'},
-    {
-    image:'../../../../assets/oldSmuggler.png',
-    name:'Old Smuggler'},
-    {
-    image:'../../../../assets/energizer.png',
-    name:'Energizer'},
-    {
-    image:'../../../../assets/eveready.png',
-    name:'Eveready'},
-    {
-      image:'../../../../assets/prittyLogo.jpg',
-      name:'Pritty'},
-    {
-      image:'https://www.fernet.com.uy/wp-content/uploads/2011/08/fernet-branca-logo.jpg',
-      name:'Fernet Branca'},
-    {
-      image:'https://d245euu0fln19d.cloudfront.net/headers/1111760956.tmp',
-      name:'Doble Cola'},
-    {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_livra.png',
-      name:'Livra'},
-    {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_magna.png',
-      name:'Magna'},
-    {
-      image:'../../../../assets/villaSanRemo.png',
-      name:'Villa San Remo'},
-    {
-      image:'https://www.pritty.com.ar/img/productos/logos/parcial_sodasaldan.png',
-      name:'Saldan'},
+      image:'../../../../assets/logos/speed.jpg'
+    },
   ]
 }
