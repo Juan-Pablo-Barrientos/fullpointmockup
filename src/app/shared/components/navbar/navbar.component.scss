@@ -13,6 +13,7 @@
   color: #fff;
 }
 
+
 .logo {
   color: white;
   font-size: 1.5rem;
@@ -56,7 +57,7 @@ img {
     transition: width 0.3s ease;
   }
   .navbar{
-    height: 60px;
+    height: 120px;
     transition: height 0.3s ease;
   }
   .image-small{
@@ -68,6 +69,9 @@ img {
     height: 35px!important;
     transition: height 0.3s ease;
   }
+  .mobileLogo{
+    display: none;
+  }
 
 }
 @media only screen and (max-width: 990px){
@@ -76,11 +80,19 @@ img {
     width: 10em !important;;
     transition: width 0.3s ease;
   }
+  .animated-button{
+    background-color: white!important;
+    color: black !important;
+  }
+  .desktopLogo{
+    display:none;
+  }
+
 }
 
 
 .animated-button {
-  height: 40px;
+  height: 50px;
   position: relative;
   overflow: hidden;
   border: none;
@@ -98,13 +110,13 @@ img {
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: cyan;
   transition: left 0.3s ease;
   color:black
 }
 
 .animated-button:hover {
-  color:blue
+  color:cyan
 }
 
 .animated-button:hover::before {

@@ -1,155 +1,39 @@
+.display-1{
+  font-size: 70px;
+}
+/* Style for the main (highlighted) card */
+.col-6 .card {
+  border:0;
+  background-color: #fff; /* Card background color */
+}
 
+/* Style for the minor cards */
+.col-3 .card {
+  border: 1px solid #ddd; /* Border for minor cards */
+  border-radius: 5px; /* Rounded corners for minor cards */
+  background-color: #f9f9f9; /* Background color for minor cards */
+}
+
+/* Center the card content vertically */
 .card {
-  transition: transform 0.3s ease-in-out;
-}
-.card:hover {
-  transform: scale(1.1);
-}
-.card img{
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 150px;
-}
-.blur-effect {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.blur-effect::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:url("https://www.thespruce.com/thmb/IIT_ZMdxU_y5rGqxCkXEgyc4TQM=/5120x3413/filters:fill(auto,1)/place-settings-on-elegant-dining-table-457980249-5834b3395f9b58d5b13487d5.jpg") repeat fixed;
-  background-size: 100% auto;
-  filter: blur(7px) brightness(1.2);
-  z-index: 0;
+.card > p{
+  font-size: 24px;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 
-.blur-effect::after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  opacity: 0.75; /* Adjust the opacity to your preference */
-}
-
-.caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
-
-.caption h2 {
-  font-size: 5vw;
-}
-
-.scrollingBackground {
-  z-index: -1;
-}
-
-.fitter{
-  height: 15em;
-}
-
-
-.slide-from-side {
-  transition: transform 4s ease-out;
-  transform: translateX(500%);
-}
-
-.slide-from-side.slide-in {
-  transform: translateX(0);
-}
-.fit-picture {
-  width: 100%;
-  position: relative;
-  left:-150%;
- }
-.fit-picture img {
-    width: 100%;
+/* Style the card images (if needed) */
+.card-img-top {
+  max-width: 700px; /* Adjust the width as needed */
+  max-height: auto; /* Adjust the height as needed */
 }
 
 @media only screen and (max-width: 990px){
-  .brandContainer{
-    filter: brightness(1.05) contrast(1.2);
-    width: 10em !important;;
-    transition: width 0.3s ease;
-  }
-}
-
-::ng-deep .carousel-control-prev-icon {
-  background-image: url("../../../../assets/leftArrow.png")!important;
-}
-
-::ng-deep .carousel-control-next-icon {
-  background-image: url("../../../../assets/rightArrow.png")!important;
-}
-::ng-deep .carousel-control-next,
-::ng-deep .carousel-control-prev  {
-  width:100px;
-  margin-bottom:20px;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  outline: black;
-  background-color: rgba(0, 0, 0, 0.3);
-  background-size: 100%, 100%;
-  border-radius: 50%;
-  border: 1px solid black;
-}
-.image-container {
-  width: 100%;
-  height: auto;
-  overflow:hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 250px; /* Adjust the value as needed */
-}
-
-.image-container img {
-  width: 100%;
-  height: 350px;
-  object-fit: contain;
-  background-color: white;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  white-space: nowrap;
-}
-
-.card-deck {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start; /* Change to flex-start */
-  justify-content: center;
-}
-
-.card-deck .card{
-  width: 10em;
-}
-
-.card-title{
-  font-size: 15px;
-  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (max-width: 768px){
@@ -165,13 +49,31 @@
   .mobile{
     display: none!important;
   }
-  .card-deck .card{
-    width: 11.2em;
-  }
-  .image-container {
-    min-height: 250px; /* Adjust the value as needed */
-  }
-  .card-title{
-    font-size: 25px;
-  }
+}
+.striped-bg {
+  background-color: yellow; /* Set the yellow background color */
+  background-image: repeating-linear-gradient(
+      -45deg, /* Angle of the stripes */
+      transparent,
+      transparent 10px, /* Adjust the stripe width */
+      rgba(0, 0, 0, 0.1) 10px, /* Adjust the stripe width */
+      rgba(0, 0, 0, 0.1) 20px /* Adjust the space between stripes */
+  );
+}
+.sushi-belt {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  transition: transform 0.5s; /* Adjust the transition duration and easing as needed */
+}
+
+.sushi-plate {
+  width: 250px;
+  height: 300px;
+  margin-right: 20px; /* Adjust spacing between plates */
+}
+
+img {
+  max-width: 250px;
+  height: auto;
 }

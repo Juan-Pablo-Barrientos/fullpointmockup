@@ -2,8 +2,9 @@
 <nav class="navbar navbar-expand-lg navbar-primary bg-white nav-shadow fixed-top " [ngClass]="{'navbar-small': isNavbarSmall}">
   <div class="container" >
     <a href="/">
-      <div class="brandContainer p-3 mt-1"[ngClass]="{'image-small': isNavbarSmall}" >
-        <img [@slideInAnimation] src="../../../../assets/brandTitle.jpeg" style="width:100%">
+      <div class="brandContainer p-4"[ngClass]="{'image-small': isNavbarSmall}" >
+        <img [@slideInAnimation] src="../../../../assets/pp.jpg" class="desktopLogo" style="width:100%">
+        <img [@slideInAnimation] src="../../../../assets/brandTitle.jpeg" class="mobileLogo" style="width:100%">
       </div>
     </a>
     <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -11,29 +12,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0 ">
+        <li class="nav-item ">
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
           href='#' (click)="scrollToComponent('home')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
-          href='#' (click)="scrollToComponent('aboutUs')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Sobre Nosotros</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('aboutUs')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Empresa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
           href='#' (click)="scrollToComponent('brands')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Representaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
-          href='#' (click)="scrollToComponent('sendCV')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Trabaja con nosotros</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('sendCV')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Empleo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
           href='#' (click)="scrollToComponent('contactForm')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
           [href]="'https://drive.google.com/file/d/1o_cKfWqCb2ZWIAlUe3OsUTVA6vQIURzk/view?usp=sharing'"  target="_blank">Catálogo</a>
         </li>
       </ul>

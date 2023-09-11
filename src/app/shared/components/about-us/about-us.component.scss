@@ -1,12 +1,9 @@
 img {
   filter: brightness(1.2) contrast(1.2);
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s fade-in;
 }
 
-
 .scrollingBackground {
-  background-image: linear-gradient(to bottom, #2980b9,#2980b9,#2980b9, #39caff,#54d2ff ,#76daff, #ffffff);
+  background-image: linear-gradient(to bottom, #2980b9,#2980b9,#2980b9, #34acd8,#49c0eb ,#75ccec, #ffffff);
 }
 .buttons {
   background-color: #2980b9;
@@ -70,14 +67,14 @@ img {
 
 .carousel-text h3 {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-text p {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 24px;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -147,6 +144,49 @@ img {
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
+.image-containerCards {
+  width: 100%;
+  height: auto;
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px; /* Adjust the value as needed */
+  background-color: transparent;
+}
+
+.image-containerCards img {
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: transparent;
+}
+
+.card-deck {
+  display: flex;
+  align-items: flex-start; /* Change to flex-start */
+  justify-content: center;
+  background-color: transparent;
+}
+
+.card-deck .card{
+  width: 15em;
+}
+
+@media (max-width: 1200px) {
+  .card-deck .card{
+    width: 10em;
+  }
+}
 @media (min-width: 600px) {
   .separator{
     box-shadow: 0 0 5px 2px #ffffff;
@@ -158,6 +198,10 @@ img {
   .separator{
     flex-direction: row;
   }
+  .image-containerCards img {
+    height: 250px;
+  }
+
   .separator button{
     margin: 15px;
     width: 100px;

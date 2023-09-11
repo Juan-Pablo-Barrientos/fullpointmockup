@@ -1,7 +1,7 @@
 <div class="scrollingBackground">
-  <div class="container-fluid" style="overflow: hidden;">
+  <div class="container-fluid min-vh-100" style="overflow: hidden;">
     <div class="text-center "><h2 class="display-1 mt-5">REPRESENTACIONES</h2></div>
-    <div class="">
+    <!--<div class="">
       <div *ngIf="brands" class="desktop" >
         <div class="card-deck d-flex row">
           <div class="card m-3 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 16)">
@@ -11,20 +11,63 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <ngb-carousel *ngIf="brands" class="mobile">
-      <ng-template ngbSlide>
-        <div class="card-deck d-flex row">
-          <div class="card m-2 border-0 col-m align-self-center" *ngFor="let brand of brands.slice(0, 12)">
-            <div class="image-container">
-              <img [src]="brand.image" class="card-img-top" alt="Image">
+    </div>-->
+    <div class="row">
+      <div class="container">
+        <div class="row mobile">
+          <div class="col-12">
+            <div class="card m-3 border-0 bg-warning striped-bg">
+              <div class="image-container">
+                <img [src]="brands[0].image" class="card-img-top" alt="Image">
+              </div>
             </div>
-            <div class="card-body text-center">
+          </div>
+          <div class="col-12 d-flex flex-column justify-content-center mt-3">
+            <div class="card m-3 border-0 ">
+              <div class="image-container ">
+                <img [src]="brands[2].image" class="card-img-top" alt="Image">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-flex flex-column justify-content-center ">
+            <div class="card m-3 border-0 ">
+              <div class="image-container align-items-center bg-white">
+                <img [src]="brands[1].image" class="card-img-top" alt="Image">
+              </div>
             </div>
           </div>
         </div>
-      </ng-template>
-    </ngb-carousel>
+        <div class="row desktop">
+          <div class="col-3 d-flex flex-column justify-content-center">
+            <div class="card m-3 border-0 ">
+              <div class="image-container ">
+                <img [src]="brands[2].image" class="card-img-top" alt="Image">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card m-3 border-0 bg-warning striped-bg">
+              <div class="image-container">
+                <img [src]="brands[0].image" class="card-img-top" alt="Image">
+              </div>
+            </div>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-center">
+            <div class="card m-3 border-0">
+              <div class="image-container align-items-center bg-white">
+                <img [src]="brands[1].image" class="card-img-top" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 mb-5">
+          <div class="sushi-belt">
+            <div *ngFor="let brand of brands.slice(3, 12)" class="sushi-plate d-flex align-items-center">
+              <img [src]="brand.image" alt="Sushi Plate">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

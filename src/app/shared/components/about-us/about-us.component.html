@@ -6,35 +6,42 @@
   </div>
   <div class="container-fluid row " style="height: 80%">
     <div class="col-lg-2 col-md-3 col-sm-4 d-flex align-content-center justify-content-evenly flex-wrap separator">
-        <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide1')">Historia</button>
         <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide2')">Misión</button>
-        <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide3')">Vision</button>
+        <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide3')">Visión</button>
         <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide4')">Valores</button>
     </div>
     <div class="col-lg-10 col-md-9 col-sm-8 justify-content-center text-center" style="margin-top:100px" >
       <ngb-carousel #carousel [showNavigationArrows]="false" [showNavigationIndicators]="false" [interval]="0">
-        <ng-template ngbSlide id="slide1">
-          <div class="carousel-text">
-            <h3>Historia</h3>
-            <p>Lorem ipsum dolor sit amet. Et nostrum amet aut velit esseest nihil qui exercitationem consectetur. Vel quia cumque <em>Rem minima est quia debitis aut labore voluptas cum labore pariatur</em>. Et optio nostrum <strong>Eos possimus non accusantium odio ex nemo dolorem</strong>? Nam voluptates enimEx voluptas qui impedit autem At nulla dolorum et sint amet hic quidem quam. </p><p>Aut saepe quaeUt dolorem non dolorem reprehenderit est recusandae assumenda aut quia omnis. Est nesciunt neque <em>Ut repudiandae</em> et quis deleniti. Est dolorem quia aut rerum quidemet facilis in atque amet hic internos similique. </p>
-          </div>
-        </ng-template>
         <ng-template ngbSlide id="slide2">
           <div class="carousel-text">
             <h3>Misión</h3>
-            <p>Lorem ipsum dolor sit amet. Et sunt atqueSit similique eum dignissimos corrupti ut exercitationem molestiae non consequuntur dolores aut magnam unde vel autem minima! Est pariatur galisum et consequatur omnis <em>Qui autem et tempore dolorem</em> aut voluptatem eveniet quo numquam iste ut numquam deleniti. Vel earum galisum ut nostrum aperiamet repudiandae sed unde voluptas quo blanditiis quae! Cum labore dolorem in quia aliquidquo aspernatur. </p><p>Eos magni cupiditate et cumque amet <strong>Qui odit rem aspernatur eligendi in galisum sint</strong>. Non labore tenetur <em>Est laboriosam et repudiandae aliquam qui molestiae enim</em>. Aut autem beataeQui suscipit est unde nostrum ab voluptatem nihil At perspiciatis voluptas! Qui internos labore vel sunt quisEt omnis ut labore saepe non nesciunt placeat hic odio distinctio. </p>
+            <p>Somos una empresa de amplia trayectoria en el mercado rosarino que comercializa y distribuye productos de consumo masivo, representando a grandes compañías nacionales e internacionales.<br><br>
+              Contamos con un gran equipo de colaboradores que aseguran alto grado de participación y satisfacción del mercado, garantizando resultados a nuestros socios estratégicos.<br><br>
+              A través del alcance de nuestros objetivos generamos la sustentabilidad de la empresa y de nuestros colaboradores. </p>
           </div>
         </ng-template>
         <ng-template ngbSlide id="slide3">
           <div class="carousel-text">
-            <h3>Vision</h3>
-            <p>Lorem ipsum dolor sit amet. Qui consequatur adipisci sed unde eaque <em>A galisum vel corrupti suscipit et recusandae beatae rem explicabo iusto</em>. Eum facilis repellendus ut voluptas voluptatem <strong>Vel nihil</strong>! Aut voluptate temporaest sapiente aut magnam libero. </p><p>Sit blanditiis voluptate ut temporibus magnam <strong>Et totam ut dolor dicta At consectetur ullam in sapiente blanditiis</strong>. 33 magni velitRem distinctio sit excepturi earum nam eligendi molestias aut quia libero aut soluta explicabo sit tempora veniam. Non commodi galisum <em>Et consequatur aut iure laudantium</em>. Sed ipsam illoEst exercitationem ut possimus quisquam aut iste esse qui tempore vero aut quas deserunt id tempora sunt. </p>
+            <h3>Visión</h3>
+            <p>●Ser la distribuidora líder en la comercialización de productos de consumo masivo.<br><br>
+              ●Tener el mejor equipo de colaboradores que sientan pasión por lo que hacen respetando nuestros valores.<br><br>
+              ●Ser la mejor opción de la Ciudad de Rosario para empresas líderes que buscan ser representadas. </p>
           </div>
         </ng-template>
         <ng-template ngbSlide id="slide4">
           <div class="carousel-text">
-            <h3>Valores</h3>
-            <p>Lorem ipsum dolor sit amet. Et atque sint <strong>Et sint vel accusamus quia</strong>. Sed rerum fugiat aut voluptatem esseRem velit. Vel expedita repellendus <em>Sit consequuntur et ducimus nobis et debitis debitis</em> eum illo enim est magnam maiores. </p><p>Eum galisum voluptate qui quia accusantiumsed velit qui voluptatem officia. Ut tenetur temporibus nam rerum dolorum <strong>Ut omnis ut minima ullam</strong> et necessitatibus dolorum aut architecto modi in consequuntur asperiores. Et amet repellat <em>Non quaerat eum nulla autem quo ducimus voluptas</em> vel rerum eveniet At beatae obcaecati. Ut corrupti consequaturEx odit aut amet voluptatum. </p>
+            <h3 style="margin-top:-10px">Valores</h3>
+            <div class="row ms-2">
+              <div class="col-lg-2 col-md-4 col-6" *ngFor="let index of [1,2,3,4,5,6];">
+                <div class="card-deck d-flex row ">
+                  <div class="card m-3 border-0 col-m align-self-center " style="background-color: transparent;">
+                    <div class="image-containerCards rounded-4">
+                      <img [src]="'../../../../assets/valores/Valor'+index+'.png'" alt="Image">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </ng-template>
       </ngb-carousel>
