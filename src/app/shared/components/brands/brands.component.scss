@@ -63,8 +63,7 @@
 .sushi-belt {
   display: flex;
   width: 100%;
-  white-space: nowrap;
-  transition: transform 0.5s; /* Adjust the transition duration and easing as needed */
+  white-space: nowrap; /* Adjust the transition duration and easing as needed */
 }
 
 .sushi-plate {
