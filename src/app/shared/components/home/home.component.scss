@@ -6,7 +6,7 @@
 
 .backgroundImage{
   filter: brightness(1.2) contrast(1.2);
-  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../../../../assets/vista-deposito-1.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../../../../assets/deposito3.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -110,8 +110,17 @@ img {
 .filterImage{
   filter: contrast(50%) drop-shadow(8px 8px 4px black);
 }
+.firstColumn{
+  margin-top:120px
+}
+.secondColumn{
+  margin-top:120px
+}
+.thirdColumn{
+  margin-top:120px
+}
 
-@media only screen and (min-width: 1150px){
+@media only screen and (min-width: 1200px){
   .h1{
     font-size:4em
   }
@@ -127,10 +136,22 @@ img {
     font-size: 2em!important;
   }
 }
+@media only screen and (min-width: 1400px){
+  .circle{
+    width: 450px!important;
+    height: 450px!important;
+  }
+}
 @media only screen and (min-width: 680px){
   .cards{
-    height: 600px;
+    height: 100vh;
   }
+}
+@media only screen and (max-width: 680px){
+  .firstColumn{
+    margin-top:120px
+  }
+
 }
 
 @media only screen and (max-width: 550px){
