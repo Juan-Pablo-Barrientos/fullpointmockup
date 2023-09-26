@@ -29,7 +29,7 @@
 
 /* Style the card images (if needed) */
 .card-img-top {
-  max-width: 700px; /* Adjust the width as needed */
+  max-width: 900px; /* Adjust the width as needed */
   max-height: auto; /* Adjust the height as needed */
 }
 
@@ -50,17 +50,12 @@
     display: none!important;
   }
 }
-.striped-bg {
-  background-color: yellow; /* Set the yellow background color */
-  background-image: repeating-linear-gradient(
-      -45deg, /* Angle of the stripes */
-      transparent,
-      transparent 10px, /* Adjust the stripe width */
-      rgba(0, 0, 0, 0.1) 10px, /* Adjust the stripe width */
-      rgba(0, 0, 0, 0.1) 20px /* Adjust the space between stripes */
-  );
-}
 .sushi-belt {
+  display: flex;
+  width: 100%;
+  white-space: nowrap; /* Adjust the transition duration and easing as needed */
+}
+.sushi-belt2 {
   display: flex;
   width: 100%;
   white-space: nowrap; /* Adjust the transition duration and easing as needed */
@@ -71,8 +66,19 @@
   height: 300px;
   margin-right: 20px; /* Adjust spacing between plates */
 }
+.sushi-plate2 {
+  width: 400px;
+  height: 500px;
+  margin-right: 150px; /* Adjust spacing between plates */
+}
+
+.sizeImg{
+  max-width: 450px;
+  height: auto;
+}
 
 img {
   max-width: 250px;
   height: auto;
 }
+

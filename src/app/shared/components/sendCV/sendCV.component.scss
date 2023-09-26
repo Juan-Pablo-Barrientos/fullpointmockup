@@ -1,6 +1,6 @@
 
 .scrollingBackground {
-  background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url('https://www.build-review.com/wp-content/uploads/2021/03/Warehouse.jpg');
+  background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('../../../../assets/vistafpexterior.jpeg');
   background-repeat: no-repeat;
   background-attachment:fixed;
   background-size: cover;
@@ -78,9 +78,6 @@ input[type='file'] {
 
 .banner p {
   font-size: 18px;
-}
-.blurredBackground{
-  backdrop-filter: blur(3px) brightness(0.85) saturate(1.5) hue-rotate(190deg);
 }
 
 @media only screen and (min-width:800px){

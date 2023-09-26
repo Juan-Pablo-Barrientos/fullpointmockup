@@ -11,9 +11,18 @@ import { Subscription, timer } from 'rxjs';
 export class BrandsComponent implements OnInit {
   slideIn = false;
   subscribedTimer!:Subscription;
-  brands:{image:string}[]=[
+  brands2:{image:string}[]=[
     {
-      image:'../../../../assets/logos/Pritty.png'
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
       image:'../../../../assets/logos/baggio.png'
@@ -28,6 +37,107 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    }
+  ]
+  brands:{image:string}[]=[
+    {
+      image:'../../../../assets/PRITTY2023.jpeg'
+    },
+    {
       image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
@@ -49,10 +159,25 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/marolio.png'
     },
     {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/campari_logo_0_1_0.png'
+    },
+    {
+      image:'../../../../assets/bodegaLaRural.jpg'
+    },
+    {
+      image:'../../../../assets/logos/Energizer-logo.png'
+    },
+    {
+      image:'../../../../assets/logos/speed.jpg'
+    },
+    {
+      image:'../../../../assets/logos/pascual-toso.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/marolio.png'
     },
     {
       image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
@@ -76,12 +201,6 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/marolio.png'
     },
     {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
-    },
-    {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
-    },
-    {
       image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
@@ -103,10 +222,25 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/marolio.png'
     },
     {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/campari_logo_0_1_0.png'
+    },
+    {
+      image:'../../../../assets/bodegaLaRural.jpg'
+    },
+    {
+      image:'../../../../assets/logos/Energizer-logo.png'
+    },
+    {
+      image:'../../../../assets/logos/speed.jpg'
+    },
+    {
+      image:'../../../../assets/logos/pascual-toso.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/marolio.png'
     },
     {
       image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
@@ -138,6 +272,7 @@ export class BrandsComponent implements OnInit {
 
   rotateSushiBelt(): void {
     const sushiBelt = document.querySelector('.sushi-belt') as HTMLElement;
+    const sushiBelt2 = document.querySelector('.sushi-belt2') as HTMLElement;
     let currentPosition = 0;
     const plateWidth = 250; // Adjust the plate width according to your design
     let lastTimestamp = 0;
@@ -152,6 +287,7 @@ export class BrandsComponent implements OnInit {
       currentPosition -= (plateWidth * deltaTime) / 2000; // Calculate the position change per second
 
       sushiBelt.style.transform = `translateX(${currentPosition}px`;
+      sushiBelt2.style.transform = `translateX(${currentPosition}px`;
 
       // Check if the belt has looped
       if (currentPosition < -plateWidth * (this.brands.length - 10)) {
