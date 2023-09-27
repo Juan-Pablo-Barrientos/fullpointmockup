@@ -25,16 +25,7 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
-      image:'../../../../assets/logos/baggio.png'
-    },
-    {
-      image:'../../../../assets/logos/fecovita.png'
-    },
-    {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
-    },
-    {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
       image:'../../../../assets/logos/baggio.png'
@@ -49,16 +40,7 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
-      image:'../../../../assets/logos/baggio.png'
-    },
-    {
-      image:'../../../../assets/logos/fecovita.png'
-    },
-    {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
-    },
-    {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
       image:'../../../../assets/logos/baggio.png'
@@ -73,16 +55,7 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
-      image:'../../../../assets/logos/baggio.png'
-    },
-    {
-      image:'../../../../assets/logos/fecovita.png'
-    },
-    {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
-    },
-    {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
       image:'../../../../assets/logos/baggio.png'
@@ -97,16 +70,7 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
-      image:'../../../../assets/logos/baggio.png'
-    },
-    {
-      image:'../../../../assets/logos/fecovita.png'
-    },
-    {
-      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
-    },
-    {
-      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
       image:'../../../../assets/logos/baggio.png'
@@ -121,6 +85,9 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
     },
     {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
+    {
       image:'../../../../assets/logos/baggio.png'
     },
     {
@@ -131,14 +98,92 @@ export class BrandsComponent implements OnInit {
     },
     {
       image:'../../../../assets/logos/NORTON-LOGO.jpeg'
-    }
+    },
+    {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
+    {
+      image:'../../../../assets/logos/baggio.png'
+    },
+    {
+      image:'../../../../assets/logos/fecovita.png'
+    },
+    {
+      image:'../../../../assets/logos/LOGO_BRANCA_FERNET.png'
+    },
+    {
+      image:'../../../../assets/logos/NORTON-LOGO.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+    },
   ]
   brands:{image:string}[]=[
     {
       image:'../../../../assets/PRITTY2023.jpeg'
     },
     {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+      image:'../../../../assets/logos/campari_logo_0_1_0.png'
+    },
+    {
+      image:'../../../../assets/bodegaLaRural.jpg'
+    },
+    {
+      image:'../../../../assets/logos/Energizer-logo.png'
+    },
+    {
+      image:'../../../../assets/logos/speed.jpg'
+    },
+    {
+      image:'../../../../assets/logos/pascual-toso.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/marolio.png'
     },
     {
       image:'../../../../assets/logos/campari_logo_0_1_0.png'
@@ -159,7 +204,22 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/marolio.png'
     },
     {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
+      image:'../../../../assets/logos/campari_logo_0_1_0.png'
+    },
+    {
+      image:'../../../../assets/bodegaLaRural.jpg'
+    },
+    {
+      image:'../../../../assets/logos/Energizer-logo.png'
+    },
+    {
+      image:'../../../../assets/logos/speed.jpg'
+    },
+    {
+      image:'../../../../assets/logos/pascual-toso.jpeg'
+    },
+    {
+      image:'../../../../assets/logos/marolio.png'
     },
     {
       image:'../../../../assets/logos/campari_logo_0_1_0.png'
@@ -180,9 +240,6 @@ export class BrandsComponent implements OnInit {
       image:'../../../../assets/logos/marolio.png'
     },
     {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
-    },
-    {
       image:'../../../../assets/logos/campari_logo_0_1_0.png'
     },
     {
@@ -199,51 +256,6 @@ export class BrandsComponent implements OnInit {
     },
     {
       image:'../../../../assets/logos/marolio.png'
-    },
-    {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
-    },
-    {
-      image:'../../../../assets/logos/campari_logo_0_1_0.png'
-    },
-    {
-      image:'../../../../assets/bodegaLaRural.jpg'
-    },
-    {
-      image:'../../../../assets/logos/Energizer-logo.png'
-    },
-    {
-      image:'../../../../assets/logos/speed.jpg'
-    },
-    {
-      image:'../../../../assets/logos/pascual-toso.jpeg'
-    },
-    {
-      image:'../../../../assets/logos/marolio.png'
-    },
-    {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
-    },
-    {
-      image:'../../../../assets/logos/campari_logo_0_1_0.png'
-    },
-    {
-      image:'../../../../assets/bodegaLaRural.jpg'
-    },
-    {
-      image:'../../../../assets/logos/Energizer-logo.png'
-    },
-    {
-      image:'../../../../assets/logos/speed.jpg'
-    },
-    {
-      image:'../../../../assets/logos/pascual-toso.jpeg'
-    },
-    {
-      image:'../../../../assets/logos/marolio.png'
-    },
-    {
-      image:'../../../../assets/logos/Pernod-Ricard-Simbolo.png'
     },
     {
       image:'../../../../assets/logos/campari_logo_0_1_0.png'
