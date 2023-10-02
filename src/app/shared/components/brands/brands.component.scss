@@ -32,8 +32,11 @@
   max-width: 900px; /* Adjust the width as needed */
   max-height: auto; /* Adjust the height as needed */
 }
-
-@media only screen and (max-width: 990px){
+.box{
+  padding-bottom:5px;
+  padding-top:5px;
+  background-color: rgb(80, 154, 204);
+  border-radius: 30px;
 }
 
 @media only screen and (max-width: 768px){
@@ -43,10 +46,33 @@
   .desktop{
     display: none !important;
   }
+  .sushi-plate {
+    width: 150px!important;
+    height: 200px!important;
+    margin-right: 100px!important; /* Adjust spacing between plates */
+  }
+  .sushi-plate2 {
+    width: 150px!important;
+    height: 200px!important;
+    margin-right: 100px!important; /* Adjust spacing between plates */
+  }
+  .sushi-plate > img{
+    max-width: 200px!important;
+    height: auto!important;
+  }
+  .sushi-plate2 > img {
+    max-width: 200px!important;
+    height: auto!important;
+  }
 }
 
 @media only screen and (min-width: 769px){
   .mobile{
+    display: none!important;
+  }
+}
+@media only screen and (min-width: 426px){
+  .mobile-title{
     display: none!important;
   }
 }

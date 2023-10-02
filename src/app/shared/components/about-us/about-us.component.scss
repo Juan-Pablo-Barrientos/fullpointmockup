@@ -78,7 +78,17 @@ img {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
+.desktop{
+  display:none;
+}
+
 @media (min-width: 768px) {
+  .mobile{
+    display:none
+  }
+  .desktop{
+    display:block;
+  }
   .carousel-text h3 {
     font-size: 36px;
   }
