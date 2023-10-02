@@ -1,4 +1,4 @@
-<div class="scrollingBackground min-vh-80" >
+<div class="scrollingBackground min-vh-80 desktop" >
   <div class="container-fluid row " style="min-height:80vh">
     <div class="col-lg-2 col-md-3 col-sm-4 d-flex align-content-center justify-content-evenly flex-wrap separator ">
         <button class="row buttons d-flex justify-content-center align-items-center" (click)="goToSlide('slide2')">Misión</button>
@@ -42,4 +42,34 @@
       </ngb-carousel>
     </div>
   </div>
+</div>
+<div class="scrollingBackground min-vh-80 mobile">
+    <div class="col-12 justify-content-center align-content-center text-center">
+      <div class="row carousel-text">
+        <h3 class="mt-5">Misión</h3>
+        <p>Somos una empresa de amplia trayectoria en el mercado rosarino que comercializa y distribuye productos de consumo masivo, representando a grandes compañías nacionales e internacionales.<br><br>
+          Contamos con un gran equipo de colaboradores que aseguran alto grado de participación y satisfacción del mercado, garantizando resultados a nuestros socios estratégicos.<br><br>
+          A través del alcance de nuestros objetivos generamos la sustentabilidad de la empresa y de nuestros colaboradores. </p>
+      </div>
+      <div class="row carousel-text">
+        <h3>Visión</h3>
+        <p>●Ser la distribuidora líder en la comercialización de productos de consumo masivo.<br><br>
+          ●Tener el mejor equipo de colaboradores que sientan pasión por lo que hacen respetando nuestros valores.<br><br>
+          ●Ser la mejor opción de la Ciudad de Rosario para empresas líderes que buscan ser representadas. </p>
+      </div>
+      <div class="row carousel-text">
+        <h3 style="margin-top:-10px">Valores</h3>
+        <div class="row ms-2">
+          <div class="col-lg-2 col-md-4 col-6" *ngFor="let index of [1,2,3,4,5,6];">
+            <div class="card-deck d-flex row ">
+              <div class="card m-3 border-0 col-m align-self-center " style="background-color: transparent;">
+                <div class="image-containerCards rounded-4">
+                  <img [src]="'../../../../assets/valores/Valor'+index+'.png'" alt="Image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
