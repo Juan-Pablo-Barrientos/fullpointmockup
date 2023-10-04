@@ -40,17 +40,17 @@ export class ContactFormComponent implements OnInit {
   sendEmail() {
     const MAILGUN_DOMAIN = 'sandbox84d85928f2de4bcfa88d62023437858c.mailgun.org';
     const formData = new FormData();
-    formData.append('from', 'fullpoint@info.com');
-    formData.append('to', 'jpbarrientosros@gmail.com');
+    formData.append('from', this.sendContactForm.controls.emailControl.value);
+    formData.append('to', 'contacto@fullpointsrl.com.ar');
     formData.append('subject', this.sendContactForm.controls.subjectControl.value);
     formData.append('text', 'Hola mi nombre es '+this.sendContactForm.controls.nameControl.value+' '+this.sendContactForm.controls.lastNameControl.value)
     if (this.sendContactForm.controls.phoneControl.value){
-      formData.append('text', 'Telefono: '+this.sendContactForm.controls.phoneControl.value)
+      formData.append('text', 'Teléfono: '+this.sendContactForm.controls.phoneControl.value)
     };
     if (this.sendContactForm.controls.cityControl.value){
       formData.append('text', 'Vivo en: '+this.sendContactForm.controls.cityControl.value)
     };
-    if (this.sendContactForm.controls.cityControl.value){
+    if (this.sendContactForm.controls.provinceControl.value){
       formData.append('text', this.sendContactForm.controls.provinceControl.value)
     };
     formData.append('text', 'Email: '+this.sendContactForm.controls.emailControl.value)
@@ -61,9 +61,10 @@ export class ContactFormComponent implements OnInit {
       this.toastr.error('Falta completar campos requeridos', 'Error al enviar')
       this.sendContactForm.markAllAsTouched();
       return
+    } else {
+      this.toastr.success('Gracias por contactarte!', 'Hemos recibido tu mensaje');
     }
-    this.toastr.success('Gracias por contactarte!', 'Hemos recibido tu mensaje');
-    /*axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
+    axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
         username: 'api',
         password: this.preSetValue+this.preSetValue2
@@ -76,7 +77,7 @@ export class ContactFormComponent implements OnInit {
     })
     .catch(error => {
       console.error('Error sending email:', error);
-    });*/
+    });
   }
 
   getFormValidationErrors() {
