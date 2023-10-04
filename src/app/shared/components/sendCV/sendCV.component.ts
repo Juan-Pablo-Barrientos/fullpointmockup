@@ -54,12 +54,12 @@ export class SendCVComponent implements OnInit {
   sendEmail() {
     const MAILGUN_DOMAIN = 'sandbox84d85928f2de4bcfa88d62023437858c.mailgun.org';
     const formData = new FormData();
-    formData.append('from', 'fullpoint@info.com');
-    formData.append('to', 'jpbarrientosros@gmail.com');
+    formData.append('from', this.sendCvForm.controls.emailControl.value);
+    formData.append('to', 'vchirdo@fullpointsrl.com.ar');
     formData.append('subject', 'Juan Barrientos CV');
     formData.append('text', 'Hola mi nombre es '+this.sendCvForm.controls.nameControl.value+' '+this.sendCvForm.controls.lastNameControl.value+
-    ' mi telefono es '+this.sendCvForm.controls.phoneControl.value+' y tengo '+this.sendCvForm.controls.ageControl.value+' años'+
-    ' estoy aplicando para la seccion de '+this.sendCvForm.controls.sectionControl.value+
+    ' mi teléfono es '+this.sendCvForm.controls.phoneControl.value+' y tengo '+this.sendCvForm.controls.ageControl.value+' años'+
+    ' estoy aplicando para la sección de '+this.sendCvForm.controls.sectionControl.value+
     ' te dejo mi email para contactarte conmigo '+this.sendCvForm.controls.emailControl.value);
     formData.append('attachment', this.selectedFile as Blob);
     this.getFormValidationErrors()
@@ -67,8 +67,9 @@ export class SendCVComponent implements OnInit {
       this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar')
       this.sendCvForm.markAllAsTouched();
       return
+    } else {
+      this.toastr.success('Gracias por postularte!', 'CV Enviado');
     }
-    this.toastr.success('Gracias por postularte!', 'CV Enviado');
     axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
         username: 'api',
