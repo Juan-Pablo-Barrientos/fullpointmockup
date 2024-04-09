@@ -1,0 +1,97 @@
+
+.scrollingBackground {
+  background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('../../../../assets/vistafpexterior.jpeg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+}
+.imageContainer{
+  height: 100%;
+  width: 100%;
+  max-width: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img{
+  width: 100%;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+
+input[type='file'] {
+  color:transparent;
+  width:5em;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Cargar CV';
+  display: inline-block;
+  background: blue;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.bg-image{
+  background:url('../../../../assets/yellowBackground.jpg') repeat;
+  background-size: 100% auto;
+}
+.banner {
+  background-image: url('http://img01.yun300.cn/img/04hz.jpg?tenantId=152370&viewType=1&k=1606975393000');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  text-align: center;
+  color: yellow /* Cambia el color del texto según sea necesario */
+}
+
+.banner h1 {
+  font-size: 72px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 18px;
+}
+
+@media only screen and (min-width:800px){
+  .cvCard{
+    width:50%;
+  }
+}
+.bg-image{
+  padding: 20px;
+}
+
+h1{
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+p{
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
