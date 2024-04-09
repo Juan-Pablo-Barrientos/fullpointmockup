@@ -1,28 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-primary bg-primary nav-shadow">
-  <div class="container-fluid">
-    <a class="navbar-brand text-center logo" href="#">FULL POINT</a>
-    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-lg navbar-primary bg-white nav-shadow fixed-top " [ngClass]="{'navbar-small': isNavbarSmall}">
+  <div class="container" >
+    <a href="/">
+      <div class="brandContainer p-4"[ngClass]="{'image-small': isNavbarSmall}" >
+        <img [@slideInAnimation] src="../../../../assets/pp.jpg" class="desktopLogo" style="width:100%">
+        <img [@slideInAnimation] src="../../../../assets/brandTitle.jpeg" class="mobileLogo" style="width:100%">
+      </div>
+    </a>
+    <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" [ngClass]="{'navbar-open': isNavbarOpen}" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-2 mt-lg-0 ">
+        <li class="nav-item ">
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('home')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/brands'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Representaciones</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('aboutUs')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Empresa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/aboutUs'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Sobre Nosotros</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('brands')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Representaciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [routerLink]="'/findUs'" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="bg-secondary" [routerLinkActiveOptions]="{exact: true}">Donde estamos</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('sendCV')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Empleo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ps-3 ps-lg-2 text-white rounded-3" [href]="'https://drive.google.com/file/d/19UQcqgK7MYqGHmi_b-Ooeu4dPEkx7CU2/view'"  target="_blank">Catalogo</a>
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 me-2 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          href='#' (click)="scrollToComponent('contactForm')" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" >Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ps-3 ps-lg-2 rounded-3 animated-button fs-md-5 bg-primary text-white" [ngClass]="{'animated-button-small': isNavbarSmall}"
+          [href]="'https://drive.google.com/file/d/1o_cKfWqCb2ZWIAlUe3OsUTVA6vQIURzk/view?usp=sharing'"  target="_blank">Catálogo</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div class="wspButton" [ngClass]="{'wspButton-translateButton': isNavbarSmall}">
+  <a href="https://wa.me/+5493413510506"  target="_blank"><img src="https://cdn.discordapp.com/attachments/618970725252071424/1120109041981587636/4485687.png"></a>
+</div>

@@ -10,6 +10,13 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { BrandsComponent } from './shared/components/brands/brands.component';
 import { FindUsComponent } from './shared/components/find-us/find-us.component';
 import { AboutUsComponent } from './shared/components/about-us/about-us.component';
+import { SendCVComponent } from './shared/components/sendCV/sendCV.component';
+import { ContactFormComponent } from './shared/components/contactForm/contactForm.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +26,22 @@ import { AboutUsComponent } from './shared/components/about-us/about-us.componen
     HomeComponent,
     BrandsComponent,
     FindUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    SendCVComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    provideAnimations()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,14 @@
 <div class="wrapper">
-  <header class="page-header"><app-navbar></app-navbar></header>
+  <header class="page-header">
+    <app-navbar></app-navbar>
+  </header>
   <main class="page-body">
-      <router-outlet></router-outlet>
+      <app-home class="component" id="home"></app-home>
+      <app-about-us class="aboutUs" id="aboutUs"></app-about-us>
+      <app-brands class="brands" id="brands"></app-brands>
+      <app-sendCV class="component" id="sendCV" > </app-sendCV>
+      <app-contactForm class="contactUs" id="contactForm"></app-contactForm>
   </main>
   <footer class="page-footer"><app-footer></app-footer></footer>
 </div>
+

@@ -13,6 +13,7 @@
   color: #fff;
 }
 
+
 .logo {
   color: white;
   font-size: 1.5rem;
@@ -20,4 +21,104 @@
   padding: 0% 2%;
   float: left;
   font-weight: bold;
+}
+img {
+  image-rendering: auto;
+}
+
+.wspButton{
+  position: fixed;
+  bottom:30px;
+  right: 20px;
+  z-index:10;
+  width: 5em;
+  transition: top 0.3s ease;
+}
+
+
+.wspButton img{
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  filter:drop-shadow(0 0 8px black)
+}
+
+.wspButton img:hover{
+  transform: scale(1.2);
+}
+
+@media only screen and (min-width: 990px){
+  .navbar-small {
+    height: 30px!important;
+    transition: height 0.3s ease;
+  }
+  .brandContainer{
+    filter: brightness(1.05) contrast(1.2);
+    width: 10rem !important;;
+    transition: width 0.3s ease;
+  }
+  .navbar{
+    height: 120px;
+    transition: height 0.3s ease;
+  }
+  .image-small{
+    width: 5rem !important;;
+    transition: width 0.3s ease;
+  }
+
+  .animated-button-small{
+    height: 35px!important;
+    transition: height 0.3s ease;
+  }
+  .mobileLogo{
+    display: none;
+  }
+
+}
+@media only screen and (max-width: 990px){
+  .brandContainer{
+    filter: brightness(1.05) contrast(1.2);
+    width: 10em !important;;
+    transition: width 0.3s ease;
+  }
+  .animated-button{
+    background-color: white!important;
+    color: black !important;
+  }
+  .desktopLogo{
+    display:none;
+  }
+
+}
+
+
+.animated-button {
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  transition: height 0.3s ease;
+  color:black;
+}
+
+.animated-button::before {
+  content: '';
+  position: absolute;
+  bottom: -90%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: cyan;
+  transition: left 0.3s ease;
+  color:black
+}
+
+.animated-button:hover {
+  color:cyan
+}
+
+.animated-button:hover::before {
+  left: 0;
 }
