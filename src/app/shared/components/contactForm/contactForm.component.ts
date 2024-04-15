@@ -66,8 +66,8 @@ export class ContactFormComponent implements OnInit {
     }
     axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
-        username: 'api',
-        password: this.preSetValue+this.preSetValue2
+        username: 'fullpointsrl',
+        password: "***REMOVED***"
       },
       headers: {
         'Content-Type': 'multipart/form-data'
