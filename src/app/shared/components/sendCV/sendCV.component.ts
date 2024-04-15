@@ -72,8 +72,8 @@ export class SendCVComponent implements OnInit {
     }
     axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
       auth: {
-        username: 'api',
-        password: this.preSetValue+this.preSetValue2
+        username: 'fullpointsrl',
+        password: "50a3d0ed274a9d204b8e8d4944ac9a2b-19806d14-33ea7fae"
       },
       headers: {
         'Content-Type': 'multipart/form-data'
