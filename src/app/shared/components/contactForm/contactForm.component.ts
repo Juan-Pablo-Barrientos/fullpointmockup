@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
+import { MailService } from '../mailService.service';
 
 @Component({
   selector: 'app-contactForm',
@@ -13,8 +14,9 @@ export class ContactFormComponent implements OnInit {
   preSetValue:any;
   preSetValue2:any;
   errors: any[]=[];
+  sendEmailDisabled = false;
 
-  constructor(private toastr: ToastrService){}
+  constructor(private toastr: ToastrService, private mailService:MailService){}
 
   @ViewChild('myInput') myInput: ElementRef | undefined;
   @ViewChild('myInput2') myInput2: ElementRef | undefined;
@@ -38,46 +40,32 @@ export class ContactFormComponent implements OnInit {
   }
 
   sendEmail() {
-    const MAILGUN_DOMAIN = 'sandbox84d85928f2de4bcfa88d62023437858c.mailgun.org';
-    const formData = new FormData();
-    formData.append('from', this.sendContactForm.controls.emailControl.value);
-    formData.append('to', 'contacto@fullpointsrl.com.ar');
-    formData.append('subject', this.sendContactForm.controls.subjectControl.value);
-    formData.append('text', 'Hola mi nombre es '+this.sendContactForm.controls.nameControl.value+' '+this.sendContactForm.controls.lastNameControl.value)
-    if (this.sendContactForm.controls.phoneControl.value){
-      formData.append('text', 'Teléfono: '+this.sendContactForm.controls.phoneControl.value)
-    };
-    if (this.sendContactForm.controls.cityControl.value){
-      formData.append('text', 'Vivo en: '+this.sendContactForm.controls.cityControl.value)
-    };
-    if (this.sendContactForm.controls.provinceControl.value){
-      formData.append('text', this.sendContactForm.controls.provinceControl.value)
-    };
-    formData.append('text', 'Email: '+this.sendContactForm.controls.emailControl.value)
-    formData.append('text', 'Consulta: '+this.sendContactForm.controls.messageControl.value)
-
     this.getFormValidationErrors()
     if (this.errors.length!==0){
-      this.toastr.error('Falta completar campos requeridos', 'Error al enviar')
+      this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar')
       this.sendContactForm.markAllAsTouched();
       return
-    } else {
-      this.toastr.success('Gracias por contactarte!', 'Hemos recibido tu mensaje');
     }
-    axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
-      auth: {
-        username: 'fullpointsrl',
-        password: "50a3d0ed274a9d204b8e8d4944ac9a2b-19806d14-33ea7fae"
-      },
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then(response => {
-    })
-    .catch(error => {
-      console.error('Error sending email:', error);
-    });
+        const recipient = "jpbarrientosros@gmail.com";
+        const email = this.sendContactForm.controls.emailControl.value;
+        const name = this.sendContactForm.controls.nameControl.value;
+        const surname = this.sendContactForm.controls.lastNameControl.value;
+        const phone = this.sendContactForm.controls.phoneControl.value;
+        const subject = this.sendContactForm.controls.subjectControl.value;
+        const city = this.sendContactForm.controls.cityControl.value;
+        const province = this.sendContactForm.controls.provinceControl.value;
+        const message = this.sendContactForm.controls.messageControl.value;
+        this.mailService.sendContact(recipient, name, surname, phone, email, subject, city, province, message).subscribe({
+          next:(res)=>{
+            console.log(res);
+            this.toastr.success('Gracias por contactarte!', 'Hemos recibido tu mensaje');
+            this.sendEmailDisabled = true;
+          },
+          error:(err)=>{
+            console.log(err);
+            this.toastr.error('Ha ocurrido un error en el envio de la consulta');
+          }
+      })
   }
 
   getFormValidationErrors() {

@@ -1,8 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import axios from 'axios';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { MailService } from '../mailService.service';
 
 @Component({
   selector: 'app-sendCV',
@@ -15,9 +14,10 @@ export class SendCVComponent implements OnInit {
   sendCvForm:any;
   preSetValue:any;
   preSetValue2:any;
+  sendCVDisabled = false
   errors: any[]=[];
 
-  constructor(private toastr: ToastrService){}
+  constructor(private toastr: ToastrService, private mailService:MailService){}
 
   @ViewChild('myInput') myInput: ElementRef | undefined;
   @ViewChild('myInput2') myInput2: ElementRef | undefined;
@@ -51,41 +51,6 @@ export class SendCVComponent implements OnInit {
     }
   }
 
-  sendEmail() {
-    const MAILGUN_DOMAIN = 'sandbox84d85928f2de4bcfa88d62023437858c.mailgun.org';
-    const formData = new FormData();
-    formData.append('from', this.sendCvForm.controls.emailControl.value);
-    formData.append('to', 'vchirdo@fullpointsrl.com.ar');
-    formData.append('subject', 'Juan Barrientos CV');
-    formData.append('text', 'Hola mi nombre es '+this.sendCvForm.controls.nameControl.value+' '+this.sendCvForm.controls.lastNameControl.value+
-    ' mi teléfono es '+this.sendCvForm.controls.phoneControl.value+' y tengo '+this.sendCvForm.controls.ageControl.value+' años'+
-    ' estoy aplicando para la sección de '+this.sendCvForm.controls.sectionControl.value+
-    ' te dejo mi email para contactarte conmigo '+this.sendCvForm.controls.emailControl.value);
-    formData.append('attachment', this.selectedFile as Blob);
-    this.getFormValidationErrors()
-    if (this.errors.length!==0||this.selectedFile==null){
-      this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar')
-      this.sendCvForm.markAllAsTouched();
-      return
-    } else {
-      this.toastr.success('Gracias por postularte!', 'CV Enviado');
-    }
-    axios.post(`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`, formData, {
-      auth: {
-        username: 'fullpointsrl',
-        password: "50a3d0ed274a9d204b8e8d4944ac9a2b-19806d14-33ea7fae"
-      },
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then(response => {
-    })
-    .catch(error => {
-      console.error('Error sending email:', error);
-    });
-  }
-
   getFormValidationErrors() {
     this.errors=[]
     Object.keys(this.sendCvForm.controls).forEach(key => {
@@ -96,5 +61,60 @@ export class SendCVComponent implements OnInit {
         });}
       }
     );
+  }
+
+  sendEmail() {
+    this.getFormValidationErrors()
+    if (this.errors.length!==0||this.selectedFile==null){
+      this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar')
+      this.sendCvForm.markAllAsTouched();
+      return
+    }
+    this.convertFileToBase64(this.selectedFile)
+      .then((base64String) => {
+        if (!base64String) {
+          console.error('Failed to convert file to Base64');
+          return;
+        }
+        const recipient = "jpbarrientosros@gmail.com";
+        const email = this.sendCvForm.controls.emailControl.value;
+        const name = this.sendCvForm.controls.nameControl.value;
+        const surname = this.sendCvForm.controls.lastNameControl.value;
+        const phone = this.sendCvForm.controls.phoneControl.value;
+        const age = this.sendCvForm.controls.ageControl.value;
+        const position = this.sendCvForm.controls.sectionControl.value;
+          this.mailService.sendCV(base64String, recipient, name, surname, phone, age, position, email).subscribe({
+            next:(res)=>{
+              console.log(res);
+              this.sendCVDisabled = true;
+              this.toastr.success('Gracias por postularte!', 'CV Enviado');
+            },
+            error:(err)=>{
+              console.log(err);
+              this.toastr.error('Ha ocurrido un error en el envio del CV');
+            }
+        })
+      }).catch((error: any) => {
+        console.error('Error converting file to Base64:', error);
+    });
+  }
+
+  convertFileToBase64(file: File | null): Promise<string | null> {
+    return new Promise((resolve, reject) => {
+      if (file) {
+        const fileReader = new FileReader();
+        fileReader.onload = (event: any) => {
+          const base64String = event.target.result?.split(',')[1]; // Extract base64 string from data URL
+          resolve(base64String);
+        };
+        fileReader.onerror = (event: any) => {
+          console.error('Error reading file:', event);
+          reject(null);
+        };
+        fileReader.readAsDataURL(file);
+      } else {
+        resolve(null);
+      }
+    });
   }
 }

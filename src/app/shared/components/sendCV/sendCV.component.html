@@ -31,7 +31,7 @@
                 <input hidden class="form-control m-2 form-control-sm" id="thisthing1" #myInput name="thisthing1" value="c86f3d2b2dcb5d1ec0476fe">
                 <input hidden class="form-control m-2 form-control-sm" id="thisthing2" #myInput2 name="thisthing2" value="6feb79835-6d1c649a-4e051612">
           </div>
-          <button type="submit" class="btn btn-primary mt-2">Mandar CV</button>
+          <button type="submit" class="btn btn-primary mt-2" [disabled]="sendCVDisabled">Mandar CV</button>
         </div>
       </form>
     </div>
