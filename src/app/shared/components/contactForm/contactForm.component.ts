@@ -46,7 +46,7 @@ export class ContactFormComponent implements OnInit {
       this.sendContactForm.markAllAsTouched();
       return
     }
-        const recipient = "jpbarrientosros@gmail.com";
+        const recipient = "contacto@fullpointsrl.com.ar";
         const email = this.sendContactForm.controls.emailControl.value;
         const name = this.sendContactForm.controls.nameControl.value;
         const surname = this.sendContactForm.controls.lastNameControl.value;
