@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class MailService {
-  private apiUrl = 'http://localhost:5000'; // Replace with your server URL
+  private apiUrl = 'https://fullpointback.vercel.app/'; // Replace with your server URL
 
   constructor(private http: HttpClient) {}
 
