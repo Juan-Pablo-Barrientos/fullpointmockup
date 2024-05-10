@@ -76,7 +76,7 @@ export class SendCVComponent implements OnInit {
           console.error('Failed to convert file to Base64');
           return;
         }
-        const recipient = "jpbarrientosros@gmail.com.ar";
+        const recipient = "jpbarrientosros@gmail.com";
         const email = this.sendCvForm.controls.emailControl.value;
         const name = this.sendCvForm.controls.nameControl.value;
         const surname = this.sendCvForm.controls.lastNameControl.value;
