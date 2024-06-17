@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MailService } from '../mailService.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-sendCV',
@@ -62,7 +63,9 @@ export class SendCVComponent implements OnInit {
       }
     );
   }
+
   sendEmail() {
+    this.sendCVDisabled = true;
     this.getFormValidationErrors();
     if (this.errors.length !== 0 || !this.selectedFile) {
       this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar');
@@ -87,9 +90,15 @@ export class SendCVComponent implements OnInit {
         this.sendCVDisabled = true;
         this.toastr.success('Gracias por postularte!', 'CV Enviado');
       },
-      error: (err) => {
-        console.log(err);
-        this.toastr.error('Ha ocurrido un error en el envio del CV');
+      error: (err : HttpErrorResponse) => {
+        if (err.status === 200 || err.status === 0){
+          this.sendCVDisabled = true;
+          this.toastr.success('Gracias por postularte!', 'CV Enviado');
+        } else {
+          console.log(err);
+          this.sendCVDisabled = false;
+          this.toastr.error('Ha ocurrido un error en el envio del CV');
+        }
       }
     });
   }
