@@ -75,8 +75,7 @@ export class SendCVComponent implements OnInit {
 
     const formData = new FormData();
     formData.append('cv', this.selectedFile, this.selectedFile.name);
-    //formData.append('recipient', 'nmayorga@fullpointsrl.com.ar');
-    formData.append('recipient', 'jpbarrientosros@gmail.com');
+    formData.append('recipient', 'nmayorga@fullpointsrl.com.ar');
     formData.append('email', this.sendCvForm.controls.emailControl.value);
     formData.append('name', this.sendCvForm.controls.nameControl.value);
     formData.append('surname', this.sendCvForm.controls.lastNameControl.value);
