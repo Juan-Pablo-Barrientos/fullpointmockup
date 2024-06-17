@@ -11,7 +11,7 @@ export class MailService {
   constructor(private http: HttpClient) {}
 
   sendCV(formData: FormData): Observable<any> {
-    return this.http.post(this.apiUrl, formData);
+    return this.http.post(this.apiUrl+"/cv", formData);
   }
 
   sendContact(recipient: string, name:string, surname:string, phone:string, email:string, subject:string, city:string, province:string, message:string ) {
