@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +10,8 @@ export class MailService {
 
   constructor(private http: HttpClient) {}
 
-  sendCV(pdfString: string, recipient: string, name:string, surname:string, phone:string, age:string, position:string, email:string) {
-    const body = {
-      pdfString: pdfString, // Convert Uint8Array to Array
-      recipient: recipient,
-      name: name,
-      surname: surname,
-      phone: phone,
-      age: age,
-      position: position,
-      email:email
-    };
-
-    return this.http.post(`${this.apiUrl}/cv`, body, {
-      responseType: 'text' // Set the expected response type to text
-    });
+  sendCV(formData: FormData): Observable<any> {
+    return this.http.post(this.apiUrl, formData);
   }
 
   sendContact(recipient: string, name:string, surname:string, phone:string, email:string, subject:string, city:string, province:string, message:string ) {

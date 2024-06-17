@@ -62,40 +62,35 @@ export class SendCVComponent implements OnInit {
       }
     );
   }
-
   sendEmail() {
-    this.getFormValidationErrors()
-    if (this.errors.length!==0||this.selectedFile==null){
-      this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar')
+    this.getFormValidationErrors();
+    if (this.errors.length !== 0 || !this.selectedFile) {
+      this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar');
       this.sendCvForm.markAllAsTouched();
-      return
+      return;
     }
-    this.convertFileToBase64(this.selectedFile)
-      .then((base64String) => {
-        if (!base64String) {
-          console.error('Failed to convert file to Base64');
-          return;
-        }
-        const recipient = "nmayorga@fullpointsrl.com.ar";
-        const email = this.sendCvForm.controls.emailControl.value;
-        const name = this.sendCvForm.controls.nameControl.value;
-        const surname = this.sendCvForm.controls.lastNameControl.value;
-        const phone = this.sendCvForm.controls.phoneControl.value;
-        const age = this.sendCvForm.controls.ageControl.value;
-        const position = this.sendCvForm.controls.sectionControl.value;
-          this.mailService.sendCV(base64String, recipient, name, surname, phone, age, position, email).subscribe({
-            next:(res)=>{
-              console.log(res);
-              this.sendCVDisabled = true;
-              this.toastr.success('Gracias por postularte!', 'CV Enviado');
-            },
-            error:(err)=>{
-              console.log(err);
-              this.toastr.error('Ha ocurrido un error en el envio del CV');
-            }
-        })
-      }).catch((error: any) => {
-        console.error('Error converting file to Base64:', error);
+
+    const formData = new FormData();
+    formData.append('cv', this.selectedFile, this.selectedFile.name);
+    //formData.append('recipient', 'nmayorga@fullpointsrl.com.ar');
+    formData.append('recipient', 'jpbarrientosros@gmail.com');
+    formData.append('email', this.sendCvForm.controls.emailControl.value);
+    formData.append('name', this.sendCvForm.controls.nameControl.value);
+    formData.append('surname', this.sendCvForm.controls.lastNameControl.value);
+    formData.append('phone', this.sendCvForm.controls.phoneControl.value);
+    formData.append('age', this.sendCvForm.controls.ageControl.value);
+    formData.append('position', this.sendCvForm.controls.sectionControl.value);
+
+    this.mailService.sendCV(formData).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.sendCVDisabled = true;
+        this.toastr.success('Gracias por postularte!', 'CV Enviado');
+      },
+      error: (err) => {
+        console.log(err);
+        this.toastr.error('Ha ocurrido un error en el envio del CV');
+      }
     });
   }
 
