@@ -65,7 +65,6 @@ export class SendCVComponent implements OnInit {
   }
 
   sendEmail() {
-    this.sendCVDisabled = true;
     this.getFormValidationErrors();
     if (this.errors.length !== 0 || !this.selectedFile) {
       this.toastr.error('Falta completar campos o los ha insertado mal', 'Error al enviar');
