@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MailService } from '../mailService.service';
@@ -13,20 +13,11 @@ export class SendCVComponent implements OnInit {
   selectedFile: File | null = null;
   fileName: string = 'Seleccione archivo';
   sendCvForm:any;
-  preSetValue:any;
-  preSetValue2:any;
   sendCVDisabled = false
   errors: any[]=[];
 
   constructor(private toastr: ToastrService, private mailService:MailService){}
 
-  @ViewChild('myInput') myInput: ElementRef | undefined;
-  @ViewChild('myInput2') myInput2: ElementRef | undefined;
-
-  ngAfterViewInit() {
-    this.preSetValue = this.myInput?.nativeElement.value;
-    this.preSetValue2 = this.myInput2?.nativeElement.value;
-  }
 
   ngOnInit(): void {
     this.sendCvForm=new FormGroup({

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
@@ -11,20 +11,11 @@ import { MailService } from '../mailService.service';
 })
 export class ContactFormComponent implements OnInit {
   sendContactForm:any;
-  preSetValue:any;
-  preSetValue2:any;
   errors: any[]=[];
   sendEmailDisabled = false;
 
   constructor(private toastr: ToastrService, private mailService:MailService){}
 
-  @ViewChild('myInput') myInput: ElementRef | undefined;
-  @ViewChild('myInput2') myInput2: ElementRef | undefined;
-
-  ngAfterViewInit() {
-    this.preSetValue = this.myInput?.nativeElement.value;
-    this.preSetValue2 = this.myInput2?.nativeElement.value;
-  }
 
   ngOnInit(): void {
     this.sendContactForm=new FormGroup({
